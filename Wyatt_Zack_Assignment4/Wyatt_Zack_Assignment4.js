@@ -5,34 +5,43 @@
 // Libraries
 
 
+var myLibrary = function(){
+
 //Does a string follow a 123-456-7890 pattern like a phone number?
 
-var myLibrary = function(){
-    var validatePhoneNum = function(number){  
-      var phoneNumPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/; 
-        return phoneNumPattern.test(number);
+var validatePhoneNum = function(number){  
+var phoneNumPattern = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/; 
+    return phoneNumPattern.test(number);
 
    };   
 
 // Does a string follow a aaa@bbb.ccc pattern like an email?
 
-   var validateEmailAddress = function (email){ 
-      var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; 
-    	  if(emailPattern.test(email) === false) {
-	      console.log("Your email address is not valid. Please try again."); 
-	      return false;
-	  }else{
-		  console.log("Your email address is valid."); 
-		  return true;
+var validateEmailAddress = function (email){ 
+var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/; 
+    if(emailPattern.test(email) === false) {
+	console.log("Your email address is not valid. Please try again."); 
+	return false;
+    }else{
+	console.log("Your email address is valid."); 
+	return true;
                 
-          }
-   };
+    }
+};
    
 //Is the string a URL? (Does it start with http: or https:)
 
+var validUrl = function (url){  
+var urlPattern =  /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/; 
+    if(urlPattern.test(url) === false) { 
+        console.log("This is a vaild url."); 
+	return false;
+    }else{
+	console.log("This url is a correct."); 
+	return true;
+    }
 
-
-//Title-case a string (split into words, then uppercase the first letter of each word)
+};
 
 
 /*
@@ -60,10 +69,11 @@ return a string with the first separator changed to the second: "a,b,c" + "," + 
 
 
 //RETURN FUNCTION WRAPPER
-    return {
-    	"validatePhoneNum":validatePhoneNum, 
-    	"validateEmailAddress":validateEmailAddress,
-    	
+
+return {
+        "validatePhoneNum":validatePhoneNum, 
+        "validateEmailAddress":validateEmailAddress,
+        "validUrl":validUrl,
     };
 };
 
@@ -73,3 +83,6 @@ var newLib = new myLibrary();
 
 console.log(newLib.validatePhoneNum(2088709663));
 console.log(newLib.validateEmailAddress("zackw22@fullsail.edu"));
+console.log(newLib.validUrl("http://fullsail.com"));
+
+
