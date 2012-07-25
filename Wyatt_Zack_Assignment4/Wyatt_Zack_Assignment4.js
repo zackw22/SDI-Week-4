@@ -22,7 +22,8 @@ var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     if(emailPattern.test(email) === false) {
 	console.log("Your email address is not valid. Please try again."); 
 	return false;
-    }else{
+    }
+    else{
 	console.log("Your email address is valid."); 
 	return true;
                 
@@ -36,7 +37,8 @@ var urlPattern =  /(http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:
     if(urlPattern.test(url) === false) { 
         console.log("This is a vaild url."); 
 	return false;
-    }else{
+    }
+    else{
 	console.log("This url is a correct."); 
 	return true;
     }
