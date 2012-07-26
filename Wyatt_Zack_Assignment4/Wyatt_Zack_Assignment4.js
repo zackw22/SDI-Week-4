@@ -123,7 +123,6 @@ var newLib = new myLibrary();//Library Function
 console.log(newLib.validatePhoneNum(2088709663));//Output #1 Phone # used to validate function and return true boolean
 console.log(newLib.emailAddress("zackw22@fullsail.edu"));//Output #2 Email addressed used to validate
 console.log(newLib.validUrl("http://fullsail.com"));//Output #3
-
 console.log(newLib.specNum(2.1));//Output #4
 console.log(newLib.version("42"));//Output #5
 console.log(newLib.total(2, 4, 6, 8, 2));//Output #6
